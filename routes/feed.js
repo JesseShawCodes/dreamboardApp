@@ -1,6 +1,14 @@
-app.get('/feed', function(req, res) {
+var express = require('express');
+var router = express.Router();
+var app = express();
+
+var router = express.Router();
+
+//Dummy Data
+var data = require('../data/data.json')
+
+router.get('/feed', function(req, res) {
     var info = '';
-    console.log(data)
     data.forEach(function(item) {
         info += `
             <li>
@@ -14,3 +22,5 @@ app.get('/feed', function(req, res) {
         ${info}
     `)
 })
+
+module.exports = router;
