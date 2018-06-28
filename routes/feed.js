@@ -17,11 +17,13 @@ router.get('/feed', function(req, res) {
         info += `
             <li>
                 <h2>${item.username}</h2>
+                <img src="${item.image_link}">
                 <p>${item.Paragraphs}</p>
             </li>
         `;
     })
     res.send(`
+        <link rel="stylesheet" type="text/css href="/index.css">
         <h1>Dream Board App</h1>
         ${info}
     `)
