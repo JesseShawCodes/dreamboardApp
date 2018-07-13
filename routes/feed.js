@@ -4,14 +4,12 @@ Route for News Feed
 
 var express = require('express');
 var router = express.Router();
-var app = express();
-
-var router = express.Router();
 
 //Dummy Data
 var data = require('../data/data.json')
 
 router.get('/feed', function(req, res) {
+    console.log("feed...")
     var info = '';
     data.forEach(function(item) {
         info += `
@@ -23,7 +21,6 @@ router.get('/feed', function(req, res) {
         `;
     })
     res.send(`
-        <link rel="stylesheet" type="text/css href="/index.css">
         <h1>Dream Board App</h1>
         ${info}
     `)
